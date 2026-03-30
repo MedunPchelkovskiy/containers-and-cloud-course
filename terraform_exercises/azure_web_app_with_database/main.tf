@@ -41,7 +41,7 @@ resource "azurerm_linux_web_app" "main" {
 
   site_config {
     application_stack {
-      dotnet_version = "6.0"
+      dotnet_version = "8.0"
     }
     always_on = false
   }
@@ -63,12 +63,13 @@ resource "azurerm_mssql_server" "main" {
 }
 
 resource "azurerm_mssql_database" "main" {
-  name         = var.sql_database_name
-  server_id    = azurerm_mssql_server.main.id
-  collation    = "SQL_Latin1_General_CP1_CI_AS"
-  license_type = "LicenseIncluded"
-  sku_name     = "S0"
+  name           = var.sql_database_name
+  server_id      = azurerm_mssql_server.main.id
+  collation      = "SQL_Latin1_General_CP1_CI_AS"
+  license_type   = "LicenseIncluded"
+  sku_name = "Basic"
   zone_redundant = false
+  storage_account_type = "Local"
 }
 
 resource "azurerm_mssql_firewall_rule" "main" {

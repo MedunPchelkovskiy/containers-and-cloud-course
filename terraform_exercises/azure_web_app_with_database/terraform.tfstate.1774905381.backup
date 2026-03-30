@@ -1,0 +1,158 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.8",
+  "serial": 30,
+  "lineage": "c4427db5-5d0c-0cec-ae1e-aef59c22dba4",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_mssql_firewall_rule",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "end_ip_address": "0.0.0.0",
+            "id": "/subscriptions/bee5e7ba-32c2-4108-8295-248b1dd4f194/resourceGroups/TaskBoard-RG/providers/Microsoft.Sql/servers/taskboard-sql-neycho/firewallRules/allow-azure-services",
+            "name": "allow-azure-services",
+            "server_id": "/subscriptions/bee5e7ba-32c2-4108-8295-248b1dd4f194/resourceGroups/TaskBoard-RG/providers/Microsoft.Sql/servers/taskboard-sql-neycho",
+            "start_ip_address": "0.0.0.0",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_mssql_server.main",
+            "azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_mssql_server",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "administrator_login": "sqladmin",
+            "administrator_login_password": "TaskBoard@2026!",
+            "azuread_administrator": [],
+            "connection_policy": "Default",
+            "fully_qualified_domain_name": "taskboard-sql-neycho.database.windows.net",
+            "id": "/subscriptions/bee5e7ba-32c2-4108-8295-248b1dd4f194/resourceGroups/TaskBoard-RG/providers/Microsoft.Sql/servers/taskboard-sql-neycho",
+            "identity": [],
+            "location": "polandcentral",
+            "minimum_tls_version": "1.2",
+            "name": "taskboard-sql-neycho",
+            "outbound_network_restriction_enabled": false,
+            "primary_user_assigned_identity_id": "",
+            "public_network_access_enabled": true,
+            "resource_group_name": "TaskBoard-RG",
+            "restorable_dropped_database_ids": [],
+            "tags": null,
+            "timeouts": null,
+            "transparent_data_encryption_key_vault_key_id": "",
+            "version": "12.0"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "administrator_login_password"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/bee5e7ba-32c2-4108-8295-248b1dd4f194/resourceGroups/TaskBoard-RG",
+            "location": "polandcentral",
+            "managed_by": "",
+            "name": "TaskBoard-RG",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_service_plan",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "app_service_environment_id": "",
+            "id": "/subscriptions/bee5e7ba-32c2-4108-8295-248b1dd4f194/resourceGroups/TaskBoard-RG/providers/Microsoft.Web/serverFarms/TaskBoard-Plan",
+            "kind": "linux",
+            "location": "polandcentral",
+            "maximum_elastic_worker_count": 1,
+            "name": "TaskBoard-Plan",
+            "os_type": "Linux",
+            "per_site_scaling_enabled": false,
+            "reserved": true,
+            "resource_group_name": "TaskBoard-RG",
+            "sku_name": "F1",
+            "tags": null,
+            "timeouts": null,
+            "worker_count": 1,
+            "zone_balancing_enabled": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_integer",
+      "name": "ri",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "77263",
+            "keepers": null,
+            "max": 99999,
+            "min": 10000,
+            "result": 77263,
+            "seed": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
